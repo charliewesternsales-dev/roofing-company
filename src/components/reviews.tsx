@@ -1,0 +1,5 @@
+import { Quote } from 'lucide-react';
+import { SectionHeading, Button } from './ui';
+export default function Reviews({ full=false }: { full?:boolean }) {
+  return <section className="section reviews-section"><div className="container"><SectionHeading eyebrow="FROM HOMEOWNER TO HOMEOWNER" title="A reputation built at home." copy="What Portland homeowners are saying — a space for real experiences, in their own words.">{!full && <Button href="/reviews" variant="button-outline">Homeowner reviews</Button>}</SectionHeading><div className="review-grid">{[1,2,3].map(n=><article className="review-card" key={n}><Quote size={32} strokeWidth={1}/><span className="review-label">VERIFIED REVIEW PLACEHOLDER</span><blockquote>[Customer review will be added here]</blockquote><div className="review-person"><span>—</span><div><strong>[Customer name]</strong><small>[Review source & date]</small></div></div></article>)}</div><p className="small-note">Only authentic, approved customer reviews will be published. No ratings or testimonials have been invented.</p></div></section>;
+}

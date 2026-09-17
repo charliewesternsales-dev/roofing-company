@@ -1,0 +1,3 @@
+const { chromium }=require('@playwright/test');
+const AxeBuilder=require('@axe-core/playwright').default;
+(async()=>{const browser=await chromium.launch();const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();for(const route of ['/','/contact','/projects']){await page.goto('http://localhost:3000'+route);await page.waitForLoadState('networkidle');const r=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();console.log(route,JSON.stringify(r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary})).slice(0,15)}))));}await browser.close();})();
