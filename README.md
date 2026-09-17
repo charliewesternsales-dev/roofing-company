@@ -11,6 +11,24 @@ npm run dev
 
 Open http://localhost:3000. For production, run `npm run build` followed by `npm start`. Requires Node.js 20.9 or newer.
 
+## Deploy to Vercel
+
+Import the GitHub repository as a Next.js project. This repository includes `vercel.json` to explicitly select Next.js, install from the lockfile with `npm ci`, and build with `npm run build`.
+
+Use these settings on the import screen, or in **Project Settings → Build and Deployment**:
+
+- Framework Preset: **Next.js**.
+- Root Directory: repository root (`./`), where `package.json` is located.
+- Build Command: `npm run build`.
+- Install Command: `npm ci`.
+- Output Directory: leave the override **off** so Vercel uses the Next.js default.
+
+Commit and push `vercel.json` before retrying the import, so Vercel receives the setting. If the project is already connected, deploy the new commit rather than redeploying an older commit that lacks this file.
+
+An error such as `Expected VCR image registry vcr.vercel.com: <detect>` refers to Vercel's container-image handling. This app has no container configuration and should use the Next.js preset. Explicitly select Next.js and verify the repository root. If the error persists before a build starts, capture the import settings and full error for diagnosis; a successful local build does not verify Vercel's import settings or account state.
+
+Environment variables are optional for the initial preview: leave the inquiry webhook unset to retain preview mode. Configure real values in Vercel's Environment Variables settings when available; do not upload `.env.local`. The remaining sections explain lead delivery and publishing actual business information.
+
 ## Content and pages
 
 Edit `src/lib/site.ts` for the company name, contact details, license verification, warranty, navigation, services, projects, proposed service areas, process, materials, and FAQs. Shared components live in `src/components`; responsive styles are in `src/app/globals.css`.
