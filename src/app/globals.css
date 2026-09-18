@@ -35,4 +35,59 @@
 @media(max-width:1250px){.logo.platinum-logo{gap:9px}.logo.platinum-logo .platinum-mark{width:38px;height:42px}.logo.platinum-logo .platinum-wordmark strong{font-size:18px;letter-spacing:2px}.logo.platinum-logo .platinum-wordmark small{font-size:8px;letter-spacing:2.8px}}
 @media(max-width:700px){.logo.platinum-logo{gap:7px}.logo.platinum-logo .platinum-mark{width:30px;height:34px}.logo.platinum-logo .platinum-wordmark strong{font-size:15px;letter-spacing:1.2px}.logo.platinum-logo .platinum-wordmark small{font-size:7px;letter-spacing:1.8px;margin-top:3px}.footer .logo.platinum-logo{gap:12px}.footer .logo.platinum-logo .platinum-mark{width:44px;height:48px}.footer .logo.platinum-logo .platinum-wordmark strong{font-size:23px;letter-spacing:2px}.footer .logo.platinum-logo .platinum-wordmark small{font-size:9px;letter-spacing:3.5px}}
 @media(max-width:380px){.logo.platinum-logo .platinum-wordmark strong{font-size:14px}.logo.platinum-logo .platinum-wordmark small{font-size:6px;letter-spacing:1.9px}}
+/* Readable navigation and contact details at every viewport size. */
+.topbar,.topbar-inner>span:last-child{font-size:12px}
+.topbar-inner{height:auto;min-height:36px;padding-top:6px;padding-bottom:6px;gap:20px}
+.desktop-nav{gap:18px}
+.nav-item>a{font-size:14px}
+.service-menu{width:280px}
+.service-menu a{font-size:14px;min-height:44px}
+.header-phone{font-size:14px}
+.header-actions{gap:14px;flex-shrink:0}
+.header-cta{font-size:13px;min-height:44px;gap:10px}
+.menu-toggle{min-width:44px;min-height:44px}
+.logo.platinum-logo .platinum-wordmark small{font-size:11px;letter-spacing:2.4px}
+.footer-grid{grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr) minmax(0,1fr) minmax(0,1.1fr);gap:36px}
+.footer-grid>div{min-width:0}
+.footer-contact{font-size:14px;line-height:1.8;gap:9px;color:#c0cab9;overflow-wrap:anywhere}
+.footer-grid>div>h3{font-size:16px;margin-bottom:20px}
+.footer-grid>div>a{font-size:14px;line-height:1.6;min-height:32px;color:#c0cab9}
+.footer-grid>div>p,.footer-grid>div .footer-small{font-size:14px;line-height:1.8}
+.footer-preview{font-size:12px;color:#b5c0ae}
+.footer-bottom{font-size:12px;line-height:1.8;color:#b5c0ae}
+.footer-bottom>div{flex-wrap:wrap;gap:12px 24px}
+@media(max-width:1350px){
+  .desktop-nav{display:none}
+  .menu-toggle{display:block}
+  .header-phone span{display:inline}
+  .mobile-nav{display:block;background:var(--paper);border-top:1px solid var(--line);padding:10px 36px 23px;max-height:calc(100dvh - 160px);overflow:auto}
+  .mobile-nav>a{padding:13px 0;border-bottom:1px solid #e2e6d9;display:flex;justify-content:space-between;font-size:16px}
+  .mobile-nav>p{font-size:13px;margin-top:20px}
+}
+@media(max-width:1000px){
+  .footer-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,.8fr) minmax(0,1fr);gap:30px}
+}
+@media(max-width:700px){
+  .topbar-inner>span:first-child{font-size:12px;text-align:center}
+  .header-inner{height:auto;min-height:80px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  .header-phone{display:none}
+  .header-actions{gap:4px}
+  .header-cta{font-size:12px;padding:10px;gap:6px}
+  .header-cta svg{display:none}
+  .logo.platinum-logo .platinum-wordmark strong{font-size:17px;letter-spacing:1px}
+  .logo.platinum-logo .platinum-wordmark small{font-size:10px;letter-spacing:1.2px}
+  .mobile-nav{padding-left:20px;padding-right:20px}
+  .mobile-bottom>a{font-size:13px}
+  .footer{padding-bottom:75px}
+  .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px 24px}
+  .footer-grid>div>a{min-height:44px;margin-bottom:4px}
+  .footer-grid>div:last-child .footer-small{font-size:14px}
+  .footer .logo.platinum-logo .platinum-wordmark small{font-size:11px;letter-spacing:2.4px}
+}
+@media(max-width:380px){
+  .header-inner{gap:8px}
+  .header-actions{flex:1;justify-content:space-between}
+  .header-inner>.logo{margin-right:auto}
+  .header-cta{padding:10px 14px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.button:hover{transform:none}.photo img{transform:none!important}}
