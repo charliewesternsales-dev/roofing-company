@@ -1,7 +1,8 @@
 import { imagery } from './imagery';
 
 export const site = {
-  name: '[Company Name]',
+  name: 'Platinum Exterior Inc.',
+  brand: { wordmark: 'Platinum', descriptor: 'Exterior Inc.' },
   phone: '[PHONE NUMBER]',
   phoneHref: '',
   email: '[EMAIL ADDRESS]',

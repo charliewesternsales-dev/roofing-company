@@ -1,4 +1,4 @@
-# Portland residential roofing website
+# Platinum Exterior Inc. website
 
 A complete Next.js App Router site with 15 pages, TypeScript, Tailwind CSS 4, locally hosted Manrope fonts, and optimized local photography. The design uses forest green, warm white, sand accents, editorial layouts, and a photographic Pacific Northwest hero.
 
@@ -47,7 +47,9 @@ The API validates fields, rejects the honeypot and cross-origin browser requests
 
 ## Publishing real business content
 
-The site deliberately includes visible placeholders because no business identity or credentials were supplied. Before publication, replace the company identity/logo, phone, email, address, hours, business story, license, insurance verification, actual warranty terms, material offerings, approved reviews, and genuine project photographs. Confirm estimate availability, the service descriptions, and surrounding communities. Complete the privacy and terms drafts for the actual business and inquiry provider.
+The website name is **Platinum Exterior Inc.**, using the exact singular spelling requested for the website. The new navy-and-platinum vector identity is in `public/brand/`, with normal and reversed logos, transparent PNG exports, and standalone marks. The header/footer combine the mark with live type; the browser icon uses the same monogram. The business card was used as visual inspiration, not copied.
+
+Other business details remain placeholders. Before publication, complete the phone, email, address, hours, business story, license, insurance verification, actual warranty terms, material offerings, approved reviews, and genuine project photographs. Confirm estimate availability, the service descriptions, and surrounding communities. Complete the privacy and terms drafts for the actual business and inquiry provider.
 
 Set `NEXT_PUBLIC_SITE_URL` to the real HTTPS origin and set `site.readyToPublish` to `true` only after content is complete. Until then, the site sends `noindex, nofollow`, robots disallows indexing, the sitemap has no placeholder URLs, and RoofingContractor JSON-LD is omitted. When enabled, the sitemap and structured data use the configured identity. Only set `licenseVerified`/`insuranceVerified` after verification. Set `phoneHref` to the business's actual `tel:` link.
 

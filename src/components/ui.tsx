@@ -4,7 +4,7 @@ import { ArrowUpRight, ArrowRight, Check, House, Wrench, Search, Layers, CloudRa
 import { services, steps, site } from '@/lib/site';
 
 export function Logo({ light = false }: { light?: boolean }) {
-  return <Link href="/" className={`logo ${light ? 'logo-light' : ''}`} aria-label="Company name placeholder — home"><svg viewBox="0 0 55 43" fill="none" aria-hidden="true"><path d="M3 25 26 5l25 20M12 28l14-12 16 13M12 25v13h30V25M21 38V27h11v11" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="miter"/><path d="M37 13V6h7v14" stroke="currentColor" strokeWidth="2.2"/></svg><span><strong>{site.name.toUpperCase()}</strong><small>PORTLAND RESIDENTIAL ROOFING</small></span></Link>;
+  return <Link href="/" className={`logo platinum-logo ${light ? 'logo-light' : ''}`} aria-label={`${site.name} — home`}><Image className="platinum-mark" src={light ? '/brand/platinum-mark-light.svg' : '/brand/platinum-mark.svg'} width={48} height={52} alt="" aria-hidden="true"/><span className="platinum-wordmark"><strong>{site.brand.wordmark}</strong><small>{site.brand.descriptor}</small></span></Link>;
 }
 
 export function Button({ children = 'Get a free estimate', href = '/contact#estimate', variant = '', className = '' }: { children?: React.ReactNode; href?: string; variant?: string; className?: string }) {
