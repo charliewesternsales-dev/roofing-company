@@ -1,0 +1,75 @@
+{
+  "tool": "Built-in imagegen",
+  "images": [
+    {
+      "path": "public/images/service-replacement.webp",
+      "alt": "Illustrative sage-green bungalow with a charcoal architectural shingle roof.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. A compact sage-green Portland-style 1920s craftsman bungalow with a NEW dark charcoal architectural shingle roof, front-facing gable and covered porch, Japanese maple and small front lawn. Modest real family home, NOT a mansion. Elevated front three-quarter view clearly showing the uninterrupted shingle slopes. Warm morning light after rain. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/service-repair.webp",
+      "alt": "Illustrative close-up of gloved hands checking flashing at a brick chimney.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. Close architectural detail on a residential roof: weathered red brick chimney meeting neat charcoal asphalt shingles, correctly layered silver step flashing and counterflashing, a roofer's gloved hands checking the flashing at the lower corner. Only hands and forearms visible; no unsafe worker pose. Crisp close-up textures, blurred cedar trees beyond. Cool overcast daylight. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/service-inspection.webp",
+      "alt": "Illustrative inspector assessing a home's roof from the ground.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. A roofing inspector standing safely ON THE GROUND in a green residential front garden, viewing the roof of a cream Portland bungalow with binoculars, tablet tucked under arm. Adult in plain dark olive work jacket, three-quarter rear view, face not visible. House and pitched roof visible beyond. Documentary medium-wide shot, soft daylight. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/service-installation.webp",
+      "alt": "Illustrative new home with exposed timber roof framing and partially installed sheathing.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. An unoccupied Pacific Northwest new-construction timber house: exposed warm timber roof trusses on one half and newly fitted plywood roof sheathing with dark underlayment on the other half, raised framing clearly visible. No workers or signage. Douglas fir trees beyond, neat construction site, bright overcast sky. Elevated three-quarter side view, realistic residential roof geometry. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/service-storm.webp",
+      "alt": "Illustrative wind-damaged shingles and a fallen branch near a roof edge.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. Documentary roofing detail after a windstorm: gray asphalt-shingle residential roof with a small localized patch of lifted and missing shingles, a fallen slender fir branch resting across the eave, wet roof, gutter visible, soft out-of-focus evergreens. Restrained ordinary repairable weather damage, not a disaster scene. No people, tarps, dramatic destruction, or lightning. Close low-angle roofline view. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/service-maintenance.webp",
+      "alt": "Illustrative gloved hands clearing leaves from a residential gutter.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. Close-up of seasonal roof maintenance at the eave of a modest cedar-sided Pacific Northwest home. Gloved hands removing a few autumn leaves from a dark rain gutter with a small plastic gutter scoop; neat gray shingles and correctly fitted drip edge in view, maple leaves soft in background. Only hands and forearms in frame, no hazardous worker pose, no pressure washing. Clear soft autumn daylight. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/material-shingles.webp",
+      "alt": "Illustrative close-up of the layered edges and mineral texture of architectural shingles.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. Premium editorial macro photograph of charcoal architectural asphalt shingles, staggered layered tabs with visible mineral granules, clean stepped edges, subtle gray and warm brown flecks, natural low-angle side lighting. Fill the frame with actual shingle roofing, no buildings, tools, hands, sample labels, or text. Crisp in foreground, mild focus falloff, true-to-life finish. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/material-metal.webp",
+      "alt": "Illustrative graphite standing-seam metal roof with raised seams and a folded eave.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. Premium architectural detail photograph of matte muted graphite STANDING-SEAM METAL roofing on a low-pitched modern woodland house. Several straight raised parallel metal seams run diagonally across frame, crisp folded metal eave at bottom right, blurred evergreen treetops behind at upper edge. Soft overcast daylight, realistic metal with very slight diffuse reflections. No shingles, tiles, tools, text, or people. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/material-slate.webp",
+      "alt": "Illustrative blue-gray slate roofing with subtle stone texture and copper valley flashing.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. Editorial close-up of an elegant natural slate residential roof. Overlapping rectangular deep blue-gray slate tiles, subtly varied tone and natural stone grain, tidy straight courses and a restrained copper valley flashing visible at right edge. Soft side lighting after rain. Stone texture is clear, not asphalt shingles and not clay tiles. No text, workers, or logos. Landscape 3:2 framing. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/portland-neighborhood.webp",
+      "alt": "Illustrative aerial view of varied residential rooflines and tree-lined streets in a Pacific Northwest neighborhood.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. High-angle architectural aerial photograph of a leafy Pacific Northwest residential neighborhood: a varied collection of SMALL craftsman houses with slate, sage, cream siding and pitched charcoal shingle roofs, lush street trees, a gently curving quiet street. Misty forested hills beyond, no recognizable landmarks or addresses, realistic rooftops and streets, soft morning daylight. Distinct from a single-house hero. Landscape 16:9. Create a completely DIFFERENT setting from previous images. No lakefront setting. Landscape composition. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/contact-porch.webp",
+      "alt": "Illustrative cedar front door and covered craftsman porch with fern planting.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. Welcoming close architectural view of the covered front porch of a Pacific Northwest craftsman home, rich cedar front door, simple matte black hardware, warm off-white clapboard siding, substantial timber porch beam overhead and the shingle roof edge visible above, ceramic planter with ferns beside door, wet stone pathway. No street number, no text, no people. Restrained natural soft daylight, warm and approachable. Landscape framing. Create a completely DIFFERENT setting from previous images. No lakefront setting. Landscape composition. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/weather-rain.webp",
+      "alt": "Illustrative blue-gray home with a rain-wet roof, ferns, and misty evergreens.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. A deep blue-gray Pacific Northwest two-story gabled family home photographed from the garden on a rainy autumn afternoon. Pitched dark shingle roof glistening with rain, clean gutter with water trickling from a downspout into gravel drainage, wet ferns, tall Douglas firs receding into mist. Home centered on RIGHT side, darker evergreen garden on LEFT for website copy. Calm realistic rain, no dramatic storm, no people, no text. Wider 16:9 composition. Create a completely DIFFERENT home and setting from previous images. No lakefront setting. Landscape composition. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/project-colonial.webp",
+      "alt": "Illustrative ivory Dutch Colonial home with a charcoal gambrel roof and dormer windows.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. A distinctive warm ivory Dutch Colonial family home in a leafy Portland-style neighborhood, a broad freshly finished dark graphite GAMBREL roof with two small dormer windows, white trim and a muted brick chimney, mature hydrangeas and maple trees, brick walkway. Wide elevated front angle showcases roof geometry. Clear soft spring morning, no people or cars, no signage. Create a completely DIFFERENT home and setting from previous images. No lakefront setting. Landscape composition. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    },
+    {
+      "path": "public/images/project-cedar.webp",
+      "alt": "Illustrative cedar-sided midcentury home with a low-pitched roof among mature fir trees.",
+      "prompt": "Use case: photorealistic-natural. Asset: premium residential roofing website, illustrative editorial photograph. A distinctive single-story cedar-sided midcentury Pacific Northwest home on a wooded lot, broad low-pitched dark shingle roof, clerestory windows, brick chimney, ferns and moss-covered landscape stones. Three-quarter side view at garden level with roof edge clearly visible. Natural late afternoon sun filtered through fir trees. This is a polished residential home, not a rough log cabin. No people, vehicles, text, or logos. Create a completely DIFFERENT home and setting from previous images. No lakefront setting. Landscape composition. Authentic Pacific Northwest palette of forest green, charcoal and warm neutrals; natural photographic textures and believable architecture. No text, logo, watermark, borders, collage, fake awards or CGI aesthetic. This is a concept illustration, not an actual company project."
+    }
+  ]
+}

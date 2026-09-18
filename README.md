@@ -31,7 +31,7 @@ Environment variables are optional for the initial preview: leave the inquiry we
 
 ## Content and pages
 
-Edit `src/lib/site.ts` for the company name, contact details, license verification, warranty, navigation, services, projects, proposed service areas, process, materials, and FAQs. Shared components live in `src/components`; responsive styles are in `src/app/globals.css`.
+Edit `src/lib/site.ts` for the company name, contact details, license verification, warranty, navigation, services, projects, proposed service areas, process, materials, and FAQs. Image paths, descriptive alt text, and page hero assignments live in `src/lib/imagery.ts`. Shared components live in `src/components`; responsive styles are in `src/app/globals.css`.
 
 Routes: `/`, `/about`, `/roofing-services`, `/roof-replacement`, `/roof-repair`, `/roof-inspection`, `/new-roof-installation`, `/storm-damage-roofing`, `/roof-maintenance`, `/projects`, `/service-areas`, `/reviews`, `/contact`, `/privacy-policy`, and `/terms-of-service`.
 

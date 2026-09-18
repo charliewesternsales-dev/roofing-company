@@ -27,7 +27,7 @@ const icons = { house: House, tool: Wrench, search: Search, layers: Layers, clou
 export function ServiceCard({ service, index, compact = false }: { service: typeof services[number]; index: number; compact?: boolean }) {
   const Icon = icons[service.icon as keyof typeof icons];
   return <Link href={`/${service.slug}`} className={`service-card ${compact ? 'service-compact' : ''}`}>
-    {!compact && <div className="service-photo"><Photo src={service.image} alt={`Residential home reference for ${service.name.toLowerCase()}`} sizes="(max-width: 700px) 100vw, 33vw"/><span className="service-number">0{index + 1}</span></div>}
+    {!compact && <div className="service-photo"><Photo src={service.image} alt={service.imageAlt} sizes="(max-width: 700px) 100vw, 33vw"/><span className="service-number">0{index + 1}</span></div>}
     <div className="service-body"><Icon className="service-icon" size={27} strokeWidth={1.4}/><h3>{service.name}</h3><p>{service.description}</p><span className="text-link">Learn more <ArrowUpRight size={17}/></span></div>
   </Link>;
 }
@@ -44,6 +44,6 @@ export function CTA() {
   return <section className="cta-section"><div className="container cta-inner"><div><Eyebrow light>LET’S TAKE CARE OF YOUR HOME</Eyebrow><h2>Your roof protects<br/>everything under it.</h2><p>A leak. Aging shingles. A fresh start. Whatever brings you here,<br className="desktop-break"/> let’s take a closer look at your roof.</p></div><div className="cta-actions"><Button variant="button-sand">Get your free estimate</Button><span className="cta-phone">{site.phoneHref ? <a href={site.phoneHref}>Call {site.phone}</a> : <span>Call {site.phone}</span>}</span></div></div></section>;
 }
 
-export function PageHero({ eyebrow, title, copy, image = '/images/pnw-home.webp', cta = true }: { eyebrow: string; title: string; copy: string; image?: string; cta?: boolean }) {
-  return <section className="page-hero"><div className="page-hero-image"><Photo src={image} alt="Illustrative residential roofing and home exterior" priority/></div><div className="container"><div className="page-hero-content"><Eyebrow light>{eyebrow}</Eyebrow><h1>{title}</h1><p>{copy}</p>{cta && <Button variant="button-sand"/>}</div></div></section>;
+export function PageHero({ eyebrow, title, copy, image, imageAlt = '', cta = true }: { eyebrow: string; title: string; copy: string; image?: string; imageAlt?: string; cta?: boolean }) {
+  return <section className="page-hero">{image && <div className="page-hero-image"><Photo src={image} alt={imageAlt} priority/></div>}<div className="container"><div className="page-hero-content"><Eyebrow light>{eyebrow}</Eyebrow><h1>{title}</h1><p>{copy}</p>{cta && <Button variant="button-sand"/>}</div></div></section>;
 }

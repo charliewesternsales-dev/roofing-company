@@ -27,6 +27,33 @@ Downloaded from Unsplash's image CDN and optimized locally to WebP:
 
 The house-shaped placeholder mark is original inline SVG. Interface icons use Lucide. Manrope is bundled locally through `@fontsource-variable/manrope`.
 
+## Expanded image library
+
+Fourteen additional images were created with the **built-in imagegen tool**, bringing the library to nineteen distinct photographs. Each homepage image has its own subject. Service pages pair their service-specific hero with a different supporting photograph, and inner pages have explicit hero assignments instead of sharing the homepage image. Legal pages use a text-only hero.
+
+All final generated assets are saved locally as optimized WebP files:
+
+| File in `public/images/` | Subject |
+| --- | --- |
+| `service-replacement.webp` | Sage bungalow and new architectural shingle roof |
+| `service-repair.webp` | Chimney flashing inspection detail |
+| `service-inspection.webp` | Inspector assessing a roof from the ground |
+| `service-installation.webp` | Timber roof framing and partial sheathing |
+| `service-storm.webp` | Localized wind damage and fallen branch |
+| `service-maintenance.webp` | Clearing autumn leaves from a gutter |
+| `material-shingles.webp` | Asphalt shingle texture and layered edges |
+| `material-metal.webp` | Graphite standing-seam metal roofing |
+| `material-slate.webp` | Slate tiles and copper valley flashing |
+| `weather-rain.webp` | Blue-gray home in a rainy evergreen setting |
+| `project-colonial.webp` | Ivory Dutch Colonial home with gambrel roof |
+| `project-cedar.webp` | Cedar-sided midcentury home with low roofline |
+| `portland-neighborhood.webp` | Illustrative neighborhood rooflines and streets |
+| `contact-porch.webp` | Welcoming cedar door and covered porch |
+
+The complete final prompt for each image is recorded in [docs/image-prompts.json](docs/image-prompts.json). Image assignments and alt text are centralized in [src/lib/imagery.ts](src/lib/imagery.ts). Original source images were preserved in the imagegen output directory; the website serves only the optimized copies.
+
+These are illustrative concepts, not verified company projects, employees, product offerings, or actual Portland locations. Existing disclosure text remains in place.
+
 ## Design references
 
 The supplied references were consulted for service discoverability, prominent estimate calls to action, and the sequence of information a homeowner needs. No competitor content, images, branding, claims, or exact layout was copied. Premier Pacific Roofing was accessible; Bliss Roofing and KVN returned retrieval errors during the initial review.
