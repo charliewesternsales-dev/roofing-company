@@ -15,7 +15,7 @@ test('all public pages load with one H1 and no broken local links',async()=>{
   for(const route of routes){
     const response=await page.goto(base+route);assert.equal(response.status(),200,route);
     assert.equal(await page.locator('h1').count(),1,route+' needs exactly one H1');
-    assert.match(await page.title(),/Platinum Exterior Inc\./);
+    assert.match(await page.title(),/Platinum Exteriors, Inc\./);
     const links=await page.locator('a[href^="/"]').evaluateAll(links=>links.map(a=>new URL(a.href).pathname));
     for(const link of links)assert.ok(routes.includes(link),`Unknown route ${link} on ${route}`);
   }

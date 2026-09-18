@@ -1,4 +1,4 @@
-# Platinum Exterior Inc. website
+# Platinum Exteriors, Inc. website
 
 A complete Next.js App Router site with 15 pages, TypeScript, Tailwind CSS 4, locally hosted Manrope fonts, and optimized local photography. The design uses forest green, warm white, sand accents, editorial layouts, and a photographic Pacific Northwest hero.
 
@@ -47,7 +47,7 @@ The API validates fields, rejects the honeypot and cross-origin browser requests
 
 ## Publishing real business content
 
-The website name is **Platinum Exterior Inc.**, using the exact singular spelling requested for the website. The new navy-and-platinum vector identity is in `public/brand/`, with normal and reversed logos, transparent PNG exports, and standalone marks. The header/footer combine the mark with live type; the browser icon uses the same monogram. The business card was used as visual inspiration, not copied.
+The website name is **Platinum Exteriors, Inc.**, using the company spelling and punctuation requested for the website. The new navy-and-platinum vector identity is in `public/brand/`, with normal and reversed logos, transparent PNG exports, and standalone marks. The header/footer combine the mark with live type; the browser icon uses the same monogram. The business card was used as visual inspiration, not copied.
 
 Contact information is transcribed from the supplied business card: Keeton Epps; office (541) 327-8100; cell (541) 936-1257; fax (541) 327-2816; keetonplatinumext@gmail.com; mailing address PO Box 491, Jefferson, Oregon 97352. The office number is the primary call action. Phone and email links are active, while the estimate form remains in preview mode until a delivery provider is configured. The PO box is labeled as a mailing address, not a storefront.
 

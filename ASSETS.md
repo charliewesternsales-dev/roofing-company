@@ -25,7 +25,7 @@ Downloaded from Unsplash's image CDN and optimized locally to WebP:
 - `public/images/forest-home.webp`: https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8 — wooded cabin.
 - `public/images/roof-detail.webp`: https://images.unsplash.com/photo-1628624747186-a941c476b7ef — residential home with pitched roof.
 
-The Platinum Exterior Inc. identity is original vector artwork: a roofline and P monogram in navy `#193b50`, platinum `#9eacb4`, and an off-white reversed version. Exportable full logos and standalone marks are in `public/brand/`; the matching browser icon is `src/app/icon.svg`. Website wordmark typography uses locally bundled Manrope; standalone SVG wordmarks use Arial/Helvetica. The supplied business card informed the palette; its artwork was not copied. Interface icons use Lucide.
+The Platinum Exteriors, Inc. identity is original vector artwork: a roofline and P monogram in navy `#193b50`, platinum `#9eacb4`, and an off-white reversed version. Exportable full logos and standalone marks are in `public/brand/`; the matching browser icon is `src/app/icon.svg`. Website wordmark typography uses locally bundled Manrope; standalone SVG wordmarks use Arial/Helvetica. The supplied business card informed the palette; its artwork was not copied. Interface icons use Lucide.
 
 ## Expanded image library
 

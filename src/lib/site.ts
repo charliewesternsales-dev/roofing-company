@@ -1,8 +1,8 @@
 import { imagery } from './imagery';
 
 export const site = {
-  name: 'Platinum Exterior Inc.',
-  brand: { wordmark: 'Platinum', descriptor: 'Exterior Inc.' },
+  name: 'Platinum Exteriors, Inc.',
+  brand: { wordmark: 'Platinum', descriptor: 'Exteriors, Inc.' },
   owner: 'Keeton Epps',
   phone: '(541) 327-8100',
   phoneHref: 'tel:+15413278100',
