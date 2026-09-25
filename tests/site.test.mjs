@@ -16,6 +16,7 @@ test('all public pages load with one H1 and no broken local links',async()=>{
     const response=await page.goto(base+route);assert.equal(response.status(),200,route);
     assert.equal(await page.locator('h1').count(),1,route+' needs exactly one H1');
     assert.match(await page.title(),/Platinum Exteriors, Inc\./);
+    assert.doesNotMatch(await page.locator('body').innerText(),/website preview|\[COMPANY STORY|\[PROJECT LOCATION|\[BUSINESS HOURS/i);
     const links=await page.locator('a[href^="/"]').evaluateAll(links=>links.map(a=>new URL(a.href).pathname));
     for(const link of links)assert.ok(routes.includes(link),`Unknown route ${link} on ${route}`);
   }
@@ -46,6 +47,9 @@ test('project filters, accessible modal, FAQ, materials, and service area contro
   await page.getByRole('button',{name:'Roof Repair',exact:true}).click();
   assert.equal(await page.locator('.project-card').count(),1);
   await page.locator('.project-card').click();assert.ok(await page.locator('dialog').isVisible());
+  await expect(page.locator('dialog')).toContainText('Example scope');
+  await expect(page.locator('dialog')).toContainText('West Linn, Oregon');
+  assert.doesNotMatch(await page.locator('dialog').innerText(),/\[PROJECT/);
   await page.keyboard.press('Escape');assert.equal(await page.locator('dialog').isVisible(),false);
   await page.getByRole('button',{name:'All projects',exact:true}).click();assert.equal(await page.locator('.project-card').count(),4);
   await page.goto(base+'/roofing-services');
@@ -59,18 +63,20 @@ test('project filters, accessible modal, FAQ, materials, and service area contro
   await page.close();
 });
 
-test('estimate form validates, never fakes delivery, and downloads the inquiry',async()=>{
+test('estimate form validates, retains details on failure, and confirms successful delivery',async()=>{
   const page=await browser.newPage();await page.goto(base+'/contact');
   await page.getByRole('button',{name:'Request my free estimate'}).click();
   assert.equal(await page.locator('input:invalid').count()>0,true);
   const data={firstName:'Test',lastName:'Homeowner',phone:'5035550100',email:'test@example.com',address:'123 Test Street',city:'Portland',zip:'97201',message:'A test inquiry. No real customer information.'};
   for(const[name,value]of Object.entries(data))await page.locator(`[name="${name}"]`).fill(value);
   await page.locator('[name=projectType]').selectOption('Roof Repair');await page.locator('[name=timeline]').selectOption('Just Exploring Options');
+  await page.route('**/api/estimate',route=>route.fulfill({status:502,json:{error:'Delivery failed'}}));
   await page.getByRole('button',{name:'Request my free estimate'}).click();
-  assert.match(await page.getByRole('status').innerText(),/Nothing has been sent/);
-  const downloadPromise=page.waitForEvent('download');await page.getByRole('button',{name:'Download my inquiry'}).click();
-  const download=await downloadPromise;assert.equal(download.suggestedFilename(),'roofing-inquiry.txt');
-  await page.getByRole('button',{name:'Edit my details'}).click();assert.equal(await page.locator('[name=firstName]').inputValue(),'Test');
+  await expect(page.locator('.form-error')).toContainText('could not be delivered');
+  assert.equal(await page.locator('[name=firstName]').inputValue(),'Test');
+  await page.route('**/api/estimate',route=>route.fulfill({status:200,json:{success:true}}));
+  await page.getByRole('button',{name:'Request my free estimate'}).click();
+  await expect(page.getByRole('status')).toContainText('Your inquiry has been sent.');
   await page.close();
 });
 
@@ -85,10 +91,12 @@ test('estimate endpoint rejects invalid payloads and reports unconfigured delive
   assert.equal((await post({...valid,message:'a'.repeat(17000)})).status,413);
 });
 
-test('preview remains excluded from search indexing',async()=>{
-  assert.match(await (await fetch(base+'/robots.txt')).text(),/Disallow: \//);
+test('configured site exposes production indexing and canonical metadata',async()=>{
+  assert.match(await (await fetch(base+'/robots.txt')).text(),/Allow: \//);
   const page=await browser.newPage();await page.goto(base);
-  assert.match(await page.locator('meta[name=robots]').getAttribute('content'),/noindex/);
-  assert.equal(await page.locator('script[type="application/ld+json"]').count(),0);
+  assert.match(await page.locator('meta[name=robots]').getAttribute('content'),/^index, follow$/);
+  assert.equal(await page.locator('script[type="application/ld+json"]').count(),1);
+  const schema=JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  assert.equal(schema.url,'https://roofing-company-omega.vercel.app');
   await page.close();
 });

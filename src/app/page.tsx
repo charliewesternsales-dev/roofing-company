@@ -1,10 +1,12 @@
-import { HomeHero, Services, WhyUs, Weather, Warranty } from '@/components/home-sections';
-import { TrustBar, ProcessSteps, CTA } from '@/components/ui';
-import { ProjectGallery, Materials } from '@/components/gallery';
-import Reviews from '@/components/reviews';
-import ServiceArea from '@/components/service-area';
-import FAQ from '@/components/faq';
-import ContactForm from '@/components/contact-form';
+import { HomeHero, Services, WhyUs } from '@/components/home-sections';
+import { CTA } from '@/components/ui';
+import { ProjectGallery } from '@/components/gallery';
 export default function Home() {
-  return <><HomeHero/><TrustBar/><Services/><WhyUs/><Weather/><ProcessSteps/><ProjectGallery/><Materials/><Reviews/><Warranty/><ServiceArea/><FAQ all/><CTA/><ContactForm deliveryEnabled={!!process.env.ESTIMATE_WEBHOOK_URL}/></>;
+  return <div className="home-simple">
+    <HomeHero/>
+    <Services summary/>
+    <WhyUs summary/>
+    <ProjectGallery/>
+    <CTA/>
+  </div>;
 }

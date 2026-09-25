@@ -33,11 +33,11 @@ export function ServiceCard({ service, index, compact = false }: { service: type
 }
 
 export function TrustBar() {
-  return <div className="trust-bar"><div className="container trust-inner"><div><House/><span>Focused on your home<small>Residential roofing</small></span></div><div><MapPin/><span>Rooted in the Northwest<small>Portland, Oregon</small></span></div><div><Check/><span>A clear place to start<small>Request an estimate</small></span></div><div><ShieldCheck/><span>{site.licenseVerified && site.insuranceVerified ? 'Licensed & insured' : 'Credentials, clearly stated'}<small>{site.licenseVerified && site.insuranceVerified ? `OR CCB ${site.license}` : '[License & insurance to be verified]'}</small></span></div></div></div>;
+  return <div className="trust-bar"><div className="container trust-inner"><div><House/><span>Focused on your home<small>Residential roofing</small></span></div><div><MapPin/><span>Rooted in the Northwest<small>Portland, Oregon</small></span></div><div><Check/><span>A clear place to start<small>Request an estimate</small></span></div><div><ShieldCheck/><span>{site.licenseVerified && site.insuranceVerified ? 'Licensed & insured' : 'A considered approach'}<small>{site.licenseVerified && site.insuranceVerified ? `OR CCB ${site.license}` : 'Clear project communication'}</small></span></div></div></div>;
 }
 
 export function ProcessSteps() {
-  return <section className="section process-section"><div className="container"><SectionHeading eyebrow="WHAT TO EXPECT" title="A simple roofing process." copy="Good work starts with a clear plan. Here’s how we get there, together."><Button variant="button-outline">Start your project</Button></SectionHeading><div className="process-grid">{steps.map(([title, copy], i) => <div className="process-step" key={title}><div className="step-top"><span>0{i+1}</span>{i < 3 && <ArrowRight size={20}/>}</div><h3>{title}</h3><p>{copy}</p></div>)}</div><p className="small-note">Proposed process · final project scope and scheduling will be confirmed in your estimate.</p></div></section>;
+  return <section className="section process-section"><div className="container"><SectionHeading eyebrow="WHAT TO EXPECT" title="A simple roofing process." copy="Good work starts with a clear plan. Here’s how we get there, together."><Button variant="button-outline">Start your project</Button></SectionHeading><div className="process-grid">{steps.map(([title, copy], i) => <div className="process-step" key={title}><div className="step-top"><span>0{i+1}</span>{i < 3 && <ArrowRight size={20}/>}</div><h3>{title}</h3><p>{copy}</p></div>)}</div><p className="small-note">Final project scope and scheduling will be confirmed in your estimate.</p></div></section>;
 }
 
 export function CTA() {

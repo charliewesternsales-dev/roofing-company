@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url || 'http://localhost:3000'),
   title: { default: `Portland Roofing Contractor | ${site.name}`, template: `%s | ${site.name}` },
   description: site.description,
+  alternates: { canonical: '/' },
   robots: { index: site.readyToPublish && !!site.url, follow: site.readyToPublish && !!site.url },
   openGraph: { siteName: site.name, title: `Portland Residential Roofing | ${site.name}`, description: site.description, type: 'website', locale: 'en_US', images: [{url:'/images/pnw-home.webp',width:1672,height:941,alt:'Pacific Northwest craftsman home — illustrative concept'}] },
   twitter: { card:'summary_large_image', title:`Portland Residential Roofing | ${site.name}`, description:site.description, images:['/images/pnw-home.webp'] },

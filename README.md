@@ -27,7 +27,7 @@ Commit and push `vercel.json` before retrying the import, so Vercel receives the
 
 An error such as `Expected VCR image registry vcr.vercel.com: <detect>` refers to Vercel's container-image handling. This app has no container configuration and should use the Next.js preset. Explicitly select Next.js and verify the repository root. If the error persists before a build starts, capture the import settings and full error for diagnosis; a successful local build does not verify Vercel's import settings or account state.
 
-Environment variables are optional for the initial preview: leave the inquiry webhook unset to retain preview mode. Configure real values in Vercel's Environment Variables settings when available; do not upload `.env.local`. The remaining sections explain lead delivery and publishing actual business information.
+Configure Resend in Vercel before accepting inquiries. See the setup below; never commit API keys or `.env.local`.
 
 ## Content and pages
 
@@ -35,27 +35,36 @@ Edit `src/lib/site.ts` for the company name, contact details, license verificati
 
 Routes: `/`, `/about`, `/roofing-services`, `/roof-replacement`, `/roof-repair`, `/roof-inspection`, `/new-roof-installation`, `/storm-damage-roofing`, `/roof-maintenance`, `/projects`, `/service-areas`, `/reviews`, `/contact`, `/privacy-policy`, and `/terms-of-service`.
 
-Interactive features include the mobile menu, service dropdown, project filtering and keyboard-dismissable project dialogs, material detail panels, FAQ accordion, service-area selection with city-prefilled contact links, form validation, and preview inquiry downloads. The map is an intentionally schematic regional illustration, not a confirmed coverage boundary.
+Interactive features include the mobile menu, service dropdown, project filtering and keyboard-dismissable project dialogs, material detail panels, FAQ accordion, service-area selection with city-prefilled contact links, form validation, and Resend email delivery. The map is an intentionally schematic regional illustration, not a confirmed coverage boundary.
 
-## Estimate inquiries
+## Resend setup
 
-The default is **honest preview mode**: no request is sent, no customer information is stored on the server, and completing the form prepares an optional local text download. Reloading the page clears the draft. A missing business phone leads to contact information rather than a fake telephone number.
+The form posts to /api/estimate, which sends a plain-text email through Resend. All form fields are included and the homeowner is the reply-to address. The API key stays on the server. The form retains entered details if delivery fails and only shows success after Resend accepts the email with a receipt ID.
 
-To enable delivery, copy `.env.example` to `.env.local` and set `ESTIMATE_WEBHOOK_URL` to an HTTPS endpoint under your control. Optionally set `ESTIMATE_WEBHOOK_TOKEN` for bearer authentication. The endpoint receives JSON with the validated form fields and `source: "roofing-website"`. It must persist or deliver the inquiry before returning a success status. Set these variables at build time and runtime, then rebuild; public pages are prerendered. Secrets are server-only.
+In Vercel, open Project Settings > Environment Variables and add:
 
-The API validates fields, rejects the honeypot and cross-origin browser requests, restricts payload size, times out delivery after ten seconds, and reports delivery failures without a fake success. Add the hosting platform's rate limits before enabling public lead delivery. The external provider's actual receipt and follow-up require an end-to-end check once its URL is supplied.
+| Variable | Value |
+| --- | --- |
+| NEXT_PUBLIC_SITE_URL | https://roofing-company-omega.vercel.app |
+| RESEND_API_KEY | Your Resend sending API key |
+| RESEND_FROM_EMAIL | A sender on your verified domain, such as estimates@yourdomain.com |
+| ESTIMATE_TO_EMAIL | keetonplatinumext@gmail.com, or the inbox you choose |
 
-## Publishing real business content
+For local development, copy .env.example to .env.local and fill in the same values. In Vercel, select the Production environment and redeploy after saving the values.
 
-The website name is **Platinum Exteriors, Inc.**, using the company spelling and punctuation requested for the website. The new navy-and-platinum vector identity is in `public/brand/`, with normal and reversed logos, transparent PNG exports, and standalone marks. The header/footer combine the mark with live type; the browser icon uses the same monogram. The business card was used as visual inspiration, not copied.
+The Vercel app hostname is the website address, not an email sending domain. For production email, [verify a domain you control in Resend](https://resend.com/docs/dashboard/domains/introduction) and use a sender on that domain. You can keep hosting the website at the Vercel address.
 
-The primary office phone and mailing address were updated with the supplied details: (503) 444-1322; 1109 1st Avenue, Suite F, Box 538, Canby, Oregon 97013. Additional contact information comes from the supplied business card: Keeton Epps; cell (541) 936-1257; fax (541) 327-2816; keetonplatinumext@gmail.com. The office number is the primary call action. Phone and email links are active, while the estimate form remains in preview mode until a delivery provider is configured. The address is labeled as a mailing address.
+For a temporary test without your own domain, set RESEND_FROM_EMAIL to onboarding@resend.dev and ESTIMATE_TO_EMAIL to the email associated with your Resend account. Resend restricts this test sender to that recipient; do not use it as the production sender. See [Resend test-domain restrictions](https://resend.com/docs/knowledge-base/403-error-resend-dev-domain).
 
-Other business details remain placeholders. Before publication, complete the hours, business story, license verification, insurance verification, actual warranty terms, material offerings, approved reviews, and genuine project photographs. Confirm estimate availability, the service descriptions, and surrounding communities. Complete the privacy and terms drafts for the actual business and inquiry provider.
+After deployment, submit one test inquiry with contact details you control, check the received email and reply-to address, and confirm its delivery status in Resend. Local automated tests mock Resend and do not verify inbox delivery. Identical inquiries use the same idempotency key, avoiding duplicate sends when retrying within Resend's 24-hour retention window. The endpoint validates fields, rejects honeypot submissions and cross-origin browser requests, limits request size, and times out after ten seconds. Configure a Vercel firewall rate limit for POST /api/estimate to limit automated submissions across server instances.
 
-Set `NEXT_PUBLIC_SITE_URL` to the real HTTPS origin and set `site.readyToPublish` to `true` only after content is complete. Until then, the site sends `noindex, nofollow`, robots disallows indexing, the sitemap has no placeholder URLs, and RoofingContractor JSON-LD is omitted. When enabled, the sitemap and structured data use the configured identity. Only set `licenseVerified`/`insuranceVerified` after verification. Set `phoneHref` to the business's actual `tel:` link.
+## Business content
 
-No reviews, ratings, years in business, awards, license numbers, warranty periods, prices, manufacturer partnerships, or project addresses have been invented. Hero and professional imagery are AI-generated illustrative concepts and are visibly labeled. The gallery does not represent company work; its before/after slots await actual photographs.
+The site uses the supplied name, owner, phone numbers, email, and Canby mailing address. About copy describes the company approach without inventing founding dates, credentials, or completed-job counts. Unknown hours and warranty guarantees are replaced by consultation and project-agreement language.
+
+There are three clearly labeled fictional sample reviews and four fictional sample project entries with locations, materials, example schedules, and scope descriptions. Replace these with approved customer reviews and actual project records when available. No sample reviews are included in structured rating data. Illustrative photographs are not evidence of company work.
+
+The site is configured for indexing at https://roofing-company-omega.vercel.app. To move to a custom domain, set NEXT_PUBLIC_SITE_URL to its HTTPS origin and redeploy. Review the privacy and service terms against your actual business operations. Company identity, services, project data, and FAQs live in src/lib/site.ts; sample reviews live in src/components/reviews.tsx.
 
 ## Checks
 
@@ -68,7 +77,7 @@ npm run typecheck
 npm run build
 ```
 
-The browser suite checks all 15 routes, one H1 per page, local navigation, five responsive widths, project controls, FAQ and material controls, city-prefilled contact links, form validation and downloads, API failure cases, and preview indexing. `TEST_BASE_URL` can point it at another local port. Screenshots are generated in the ignored `artifacts/` directory. `node audit.cjs` runs automated WCAG checks on the home, contact, and projects pages while a local server is running.
+The browser suite checks all 15 routes, one H1 per page, local navigation, five responsive widths, project controls, FAQ and material controls, city-prefilled contact links, form validation and sending states, API failure cases, Resend payloads and retry handling, and production indexing. `TEST_BASE_URL` can point it at another local port. Screenshots are generated in the ignored `artifacts/` directory. `node audit.cjs` runs automated WCAG checks on the home, contact, and projects pages while a local server is running.
 
 ## Image sources
 

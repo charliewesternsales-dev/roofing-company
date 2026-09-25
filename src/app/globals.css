@@ -36,6 +36,26 @@
 @media(max-width:700px){.logo.platinum-logo{gap:7px}.logo.platinum-logo .platinum-mark{width:30px;height:34px}.logo.platinum-logo .platinum-wordmark strong{font-size:15px;letter-spacing:1.2px}.logo.platinum-logo .platinum-wordmark small{font-size:7px;letter-spacing:1.8px;margin-top:3px}.footer .logo.platinum-logo{gap:12px}.footer .logo.platinum-logo .platinum-mark{width:44px;height:48px}.footer .logo.platinum-logo .platinum-wordmark strong{font-size:23px;letter-spacing:2px}.footer .logo.platinum-logo .platinum-wordmark small{font-size:9px;letter-spacing:3.5px}}
 @media(max-width:380px){.logo.platinum-logo .platinum-wordmark strong{font-size:14px}.logo.platinum-logo .platinum-wordmark small{font-size:6px;letter-spacing:1.9px}}
 /* Readable navigation and contact details at every viewport size. */
+/* The homepage introduces the business; dedicated pages carry the details. */
+.home-simple .home-hero{height:560px}
+.home-simple .hero-content{padding-top:90px}
+.home-simple .hero-content>p:not(.eyebrow){font-size:16px;max-width:440px;line-height:1.8}
+.home-simple .hero-bottom{justify-content:flex-end}
+.home-simple .why-photo{height:490px}
+.home-simple .photo-corner{display:none}
+.home-simple .service-body>p{font-size:14px;line-height:1.8;min-height:0}
+.home-simple .why-content>p:not(.eyebrow){font-size:14px}
+.home-simple .reason p{font-size:13px}
+@media(max-width:700px){
+  .home-simple .home-hero{height:530px}
+  .home-simple .hero-content{padding-top:65px}
+  .home-simple .hero-content h1{font-size:40px}
+  .home-simple .hero-content>p:not(.eyebrow){font-size:15px}
+  .home-simple .why-photo{height:300px}
+  .home-simple .hero-actions{gap:18px}
+}
+.review-label{font-size:11px;line-height:1.6;letter-spacing:1px}
+.gallery-notice .mini-label,.dialog-content .mini-label{font-size:11px;line-height:1.6}
 .topbar,.topbar-inner>span:last-child{font-size:12px}
 .topbar-inner{height:auto;min-height:36px;padding-top:6px;padding-bottom:6px;gap:20px}
 .desktop-nav{gap:18px}
